@@ -27,33 +27,75 @@ public interface CustomerInterface {
 	void updateGymUserPassword(String email, String password, String updatedPassword);
 }*/
 
-package com.flipkart.business;
+// package com.flipkart.business;
 
+// import com.flipkart.bean.Bookings;
+// import com.flipkart.bean.Gym;
+// import com.flipkart.bean.User;
+
+// import java.util.List;
+
+// public interface CustomerInterface {
+// 	boolean verifyGymUserPassword(String email, String password, String updatedPassword);
+
+// 	boolean cancelSlots(int bookingId);
+
+// 	List<Bookings> getAllBookings(String userId);
+
+// 	List<Gym> getAllGymsWithSlots();
+
+// 	List<Gym> getAllGymsByArea(String area);
+
+// 	boolean bookSlots(int gymId, String time, String email);
+
+// 	boolean validateUser(String username, String pass);
+
+// 	void createUser(User user);
+
+// 	void updateGymUserPassword(String email, String password, String updatedPassword);
+
+// 	User getUserProfile(String email);
+// }
+
+package com.flipkart.business;
 import com.flipkart.bean.Bookings;
 import com.flipkart.bean.Gym;
 import com.flipkart.bean.User;
 
 import java.util.List;
 
+// CustomerInterface defines methods for customer-related operations
 public interface CustomerInterface {
-	boolean verifyGymUserPassword(String email, String password, String updatedPassword);
 
-	boolean cancelSlots(int bookingId);
+    // Method to verify gym user password and optionally update it
+    boolean verifyGymUserPassword(String email, String password, String updatedPassword);
 
-	List<Bookings> getAllBookings(String userId);
+    // Method to cancel slots for a booking identified by bookingId
+    boolean cancelSlots(int bookingId);
 
-	List<Gym> getAllGymsWithSlots();
+    // Method to retrieve all bookings for a user identified by userId
+    List<Bookings> getAllBookings(String userId);
 
-	List<Gym> getAllGymsByArea(String area);
+    // Method to retrieve all gyms along with available slots
+    List<Gym> getAllGymsWithSlots();
 
-	boolean bookSlots(int gymId, String time, String email);
+    // Method to retrieve all gyms in a specific area
+    List<Gym> getAllGymsByArea(String area);
 
-	boolean validateUser(String username, String pass);
+    // Method to book slots at a gym identified by gymId, for a specified time and user email
+    boolean bookSlots(int gymId, String time, String email);
 
-	void createUser(User user);
+    // Method to validate user credentials (username and password)
+    boolean validateUser(String username, String pass);
 
-	void updateGymUserPassword(String email, String password, String updatedPassword);
+    // Method to create a new user profile
+    void createUser(User user);
 
-	User getUserProfile(String email);
+    // Method to update gym user's password
+    void updateGymUserPassword(String email, String password, String updatedPassword);
+
+    // Method to retrieve user profile based on email
+    User getUserProfile(String email);
 }
+
 
