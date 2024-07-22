@@ -11,6 +11,11 @@ import java.sql.*;
 public class GymOwnerDAOImplementation implements GymOwnerDAOInterface {
 
     private Connection conn;
+    /**
+     * Inserts a new GymOwner record into the database.
+     *
+     * @param gymOwner The GymOwner object containing owner details to be inserted.
+     */
 
     @Override
     public void newGymOwner(GymOwner gymOwner) {
@@ -46,6 +51,13 @@ public class GymOwnerDAOImplementation implements GymOwnerDAOInterface {
             System.out.println(e.getMessage());
         }
     }
+    /**
+     * Verifies the password of a GymOwner against the stored credentials.
+     *
+     * @param email    The email of the GymOwner.
+     * @param password The password to be verified.
+     * @return true if the password matches, false otherwise.
+     */
 
     @Override
     public boolean verifyGymOwnerPassword(String email, String password) {
@@ -76,6 +88,12 @@ public class GymOwnerDAOImplementation implements GymOwnerDAOInterface {
         }
         return false;
     }
+    /**
+     * Changes the status of a GymOwner's profile to 'Pending' for approval.
+     *
+     * @param ownerId The ID of the GymOwner whose profile status is to be updated.
+     * @return true if the status is updated successfully, false otherwise.
+     */
 
     @Override
     public boolean sendProfileForApproval(String ownerId) {
@@ -97,6 +115,13 @@ public class GymOwnerDAOImplementation implements GymOwnerDAOInterface {
         }
         return false;
     }
+    /**
+     * Updates the password of a GymOwner in the database.
+     *
+     * @param email           The email of the GymOwner.
+     * @param password        The current password to be updated.
+     * @param updatedPassword The new password to be set.
+     */
 
     @Override
     public void updateGymOwnerPassword(String email, String password, String updatedPassword) {
@@ -126,6 +151,12 @@ public class GymOwnerDAOImplementation implements GymOwnerDAOInterface {
             System.out.println(e.getMessage());
         }
     }
+    /**
+     * Retrieves the owner ID associated with a GymOwner's email from the database.
+     *
+     * @param email The email of the GymOwner.
+     * @return The owner ID associated with the GymOwner's email, or null if not found.
+     */
 
     @Override
     public String getOwnerIdByEmail(String email) {
