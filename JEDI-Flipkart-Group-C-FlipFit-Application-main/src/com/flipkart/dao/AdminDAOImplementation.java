@@ -274,7 +274,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Implementation of AdminDAOInterface for database operations related to admin tasks.
+ */
 public class AdminDAOImplementation implements AdminDAOInterface {
     JDBCConnection connector;
     Connection conn;
