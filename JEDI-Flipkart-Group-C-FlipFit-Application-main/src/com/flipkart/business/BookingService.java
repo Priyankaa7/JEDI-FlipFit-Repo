@@ -1,11 +1,14 @@
 package com.flipkart.business;
 
-public class BookingService implements BookingInterface{
-    public void addBooking (String userId, String slotId, String gymId) {
-        return;
+// BookingService implements BookingInterface and provides booking operations
+public class BookingService implements BookingInterface {
+    // Method to add a booking
+    public void addBooking(String userId, String slotId, String gymId) {
+        return; 
     }
-
-    public void cancelBooking (String bookingId) {
-        return;
+    // Method to cancel a booking
+    public void cancelBooking(String bookingId) {
+        return; 
     }
 }
+
