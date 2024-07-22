@@ -6,7 +6,6 @@ import java.util.List;
 
 // AdminInterface defines the methods that an admin of the system can perform
 public interface AdminInterface {
-
     // Method to view all registered gym owners
     public void viewGymOwners();
     // Method to view all registered gyms
