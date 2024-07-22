@@ -1,3 +1,4 @@
+package com.flipkart.business;
 // BookingInterface defines the methods related to booking operations
 public interface BookingInterface {
 
