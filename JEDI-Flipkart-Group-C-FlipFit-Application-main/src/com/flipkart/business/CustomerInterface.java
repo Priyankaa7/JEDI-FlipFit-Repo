@@ -69,31 +69,22 @@ public interface CustomerInterface {
 
     // Method to verify gym user password and optionally update it
     boolean verifyGymUserPassword(String email, String password, String updatedPassword);
-
     // Method to cancel slots for a booking identified by bookingId
     boolean cancelSlots(int bookingId);
-
     // Method to retrieve all bookings for a user identified by userId
     List<Bookings> getAllBookings(String userId);
-
     // Method to retrieve all gyms along with available slots
     List<Gym> getAllGymsWithSlots();
-
     // Method to retrieve all gyms in a specific area
     List<Gym> getAllGymsByArea(String area);
-
     // Method to book slots at a gym identified by gymId, for a specified time and user email
     boolean bookSlots(int gymId, String time, String email);
-
     // Method to validate user credentials (username and password)
     boolean validateUser(String username, String pass);
-
     // Method to create a new user profile
     void createUser(User user);
-
     // Method to update gym user's password
     void updateGymUserPassword(String email, String password, String updatedPassword);
-
     // Method to retrieve user profile based on email
     User getUserProfile(String email);
 }
