@@ -109,37 +109,30 @@ public class AdminService implements AdminInterface {
 	// Instance variables
 	AdminDAOInterface adminDaoInterface = new AdminDAOImplementation(); // Using AdminDAOImplementation for data access
 	Scanner obj = new Scanner(System.in); // Scanner object for user input
-
 	@Override
 	public void viewGymOwners() {
 		adminDaoInterface.viewGymOwners(); // Delegates to AdminDAOInterface for viewing gym owners
 	}
-
 	@Override
 	public void viewGyms() {
 		adminDaoInterface.viewGyms(); // Delegates to AdminDAOInterface for viewing gyms
 	}
-
 	@Override
 	public void viewUsers() {
 		adminDaoInterface.viewUsers(); // Delegates to AdminDAOInterface for viewing users (not implemented in provided DAO)
 	}
-
 	@Override
 	public void verifyGym(int gymId) {
 		adminDaoInterface.verifyGyms(gymId); // Delegates to AdminDAOInterface for verifying a gym by ID
 	}
-
 	@Override
 	public void verifyGymOwner(int gymOwnerId) {
 		adminDaoInterface.verifyGymOwners(gymOwnerId); // Delegates to AdminDAOInterface for verifying a gym owner by ID
 	}
-
 	@Override
 	public List<GymOwner> getUnverifiedGymOwners() {
 		return adminDaoInterface.getUnverifiedGymOwner(); // Retrieves unverified gym owners using AdminDAOInterface
 	}
-
 	@Override
 	public List<Gym> getUnverifiedGyms() {
 		return adminDaoInterface.getUnverifiedGyms(); // Retrieves unverified gyms using AdminDAOInterface
