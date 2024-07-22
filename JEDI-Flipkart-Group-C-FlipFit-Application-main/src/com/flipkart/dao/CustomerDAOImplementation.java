@@ -812,7 +812,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class CustomerDAOImplementation implements CustomerDAOInterface {
-
+// Method to update gym user's password
     @Override
     public void updateGymUserPassword(String email, String password, String updatedPassword) {
         try (Connection conn = JDBCConnection.getConnection();
@@ -836,7 +836,7 @@ public class CustomerDAOImplementation implements CustomerDAOInterface {
             System.out.println(e.getMessage());
         }
     }
-
+ // Method to verify gym user's password
     @Override
     public boolean verifyGymUserPassword(String email, String password) {
         try (Connection conn = JDBCConnection.getConnection();
@@ -861,7 +861,7 @@ public class CustomerDAOImplementation implements CustomerDAOInterface {
         }
         return false;
     }
-
+ // Method to fetch all verified gyms with their slots
     @Override
     public List<Gym> getAllGyms() {
         List<Gym> gyms = new ArrayList<>();
@@ -893,7 +893,7 @@ public class CustomerDAOImplementation implements CustomerDAOInterface {
         }
         return gyms;
     }
-
+  // Method to fetch slots for a specific gym
     private List<Slots> getGymSlotsWithGymId(int id, Connection conn) {
         List<Slots> slotList = new ArrayList<>();
         String sqlQuery = "SELECT * FROM slots WHERE gym_id = ?";
@@ -913,7 +913,7 @@ public class CustomerDAOImplementation implements CustomerDAOInterface {
         }
         return slotList;
     }
-
+ // Method to book a slot for a user
     public boolean bookSlot(int gymId, String time, String email) {
         try (Connection conn = JDBCConnection.getConnection()) {
             int alreadyBooked = getSeatNumberWithGymIDandSlotId(gymId, time, conn);
@@ -953,7 +953,7 @@ public class CustomerDAOImplementation implements CustomerDAOInterface {
         }
         return true;
     }
-
+// Method to update remaining seats after booking
     private void alterSeatsWithGymIDSlotID(int gymId, String time, int remainingSeats, Connection conn) throws SQLException {
         String sqlQuery = "UPDATE slots SET seat_count = ? WHERE gym_id = ? AND start_time = ?";
         try (PreparedStatement preparedStatement = conn.prepareStatement(sqlQuery)) {
@@ -978,7 +978,7 @@ public class CustomerDAOImplementation implements CustomerDAOInterface {
         }
         return 0;
     }
-
+ // Method to get number of bookings for a specific slot
     private int getSeatNumberWithGymIDandSlotIdFromSlots(int gymId, String time, Connection conn) throws SQLException {
         String sqlQuery = "SELECT seat_count FROM slots WHERE gym_id= ? AND start_time = ?";
         try (PreparedStatement preparedStatement = conn.prepareStatement(sqlQuery)) {
