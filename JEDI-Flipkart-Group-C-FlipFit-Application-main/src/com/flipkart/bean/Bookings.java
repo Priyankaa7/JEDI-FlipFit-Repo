@@ -51,4 +51,37 @@ public class Bookings {
     }
 
     // Setter method for setting the booking status
-    public void 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    // Getter method for retrieving the booking time
+    public Time getTime() {
+        return time;
+    }
+
+    // Setter method for setting the booking time
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    // Getter method for retrieving the booking ID
+    public int getBookingId() {
+        return bookingId;
+    }
+
+    // Setter method for setting the booking ID
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    // Getter method for retrieving the user ID associated with the booking
+    public int getUserId() {
+        return userId;
+    }
+
+    // Setter method for setting the user ID associated with the booking
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+}
